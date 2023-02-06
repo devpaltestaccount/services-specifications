@@ -1,0 +1,102 @@
+---
+openapi: 3.0.0
+info:
+  title: Book Service, the best service in the world
+  version: '1.0'
+paths:
+  "/api/book/{id}":
+    get:
+      responses:
+        '200':
+          description: findById
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Book"
+        '500':
+          description: findById
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Book"
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+    put:
+      responses:
+        '200':
+          description: updateBook
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Book"
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+    patch:
+      responses:
+        '200':
+          description: patchBook
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Book"
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+    delete:
+      responses:
+        '200':
+          description: deleteBook
+          content: {}
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+  "/api/book/":
+    get:
+      responses:
+        '200':
+          description: findBooks
+          content: {}
+      parameters: []
+    post:
+      responses:
+        '201':
+          description: postBook
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Book"
+      parameters: []
+    head:
+      responses:
+        '200':
+          description: headBook
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Book"
+      parameters: []
+components:
+  schemas:
+    Book:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        author:
+          type: string

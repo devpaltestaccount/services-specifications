@@ -1,0 +1,47 @@
+---
+openapi: 3.0.0
+info:
+  title: Person service, because we are all about people
+  version: '1.0'
+paths:
+  "/persons":
+    post:
+      responses:
+        '200':
+          description: person
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Person"
+        '500':
+          description: person
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Person"
+      parameters: []
+    get:
+      responses:
+        '200':
+          description: findByLastName
+          content: {}
+      parameters: []
+components:
+  schemas:
+    Person:
+      type: object
+      properties:
+        id:
+          type: integer
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email1:
+          type: string
+        email2:
+          type: string
+        age:
+          type: integer
+        worth:
+          type: object
