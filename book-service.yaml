@@ -1,8 +1,9 @@
 ---
 openapi: 3.0.0
 info:
-  title: Book Service, the best service in the world
+  title: Book Service
   version: '1.0'
+  description: The best book service in the world
 paths:
   "/api/book/{id}":
     get:
